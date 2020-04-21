@@ -1,0 +1,38 @@
+<mat-card>
+  <form  (submit)="someevnt(postForm)" #postForm="ngForm">
+  <p>Add New Student Here!</p>
+  <mat-form-field>
+     <input matInput type="text"  placeholder="Student Name" required ngModel name="sName"
+     #Name="ngModel">
+     <mat-error *ngIf="postForm.submitted && Name.invalid">
+     <div *ngIf="Name.errors.required">Name is required</div>
+     </mat-error>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input matInput type="text"  placeholder="Father Name" required ngModel name="sFName" minlength="5"
+    #FatherName="ngModel" >
+    <mat-error *ngIf="postForm.submitted && FatherName.invalid">
+      <div *ngIf="FatherName.errors.required">Father Name is required </div>
+      <div *ngIf="FatherName.errors.minlength">Minimum Len required is 5 </div>
+     </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-select placeholder="Grade" ngModel name="sGrade" required>
+        <mat-option value="A">A</mat-option>
+        <mat-option value="B">B</mat-option>
+        <mat-option value="C">C</mat-option>
+        <mat-option value="D">D</mat-option>
+      </mat-select>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input matInput type="number"  placeholder="Class" required ngModel name="sClass">
+  </mat-form-field>
+<br>
+     <button style="margin-left: 60px;" mat-raised-button color="primary" width="50px" type="submit" >Submit</button>
+</form>
+</mat-card>
+<br>
+<app-admin [users]="NewUsers"></app-admin>
