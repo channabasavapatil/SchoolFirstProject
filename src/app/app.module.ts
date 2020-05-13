@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FullDetailsComponent } from './full-details/full-details.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { MatInputModule, MatCardModule, MatButtonModule, MatSelectModule, MatSnackBarModule } from '@angular/material';
+import { LoginComponent } from './login/login.component';
 // import {MatSnackBar} from '@angular/material/snack-bar';
 
 @NgModule({
@@ -22,7 +23,8 @@ import { MatInputModule, MatCardModule, MatButtonModule, MatSelectModule, MatSna
     ProfileComponent,
     AdminComponent,
     NewentryComponent,
-    FullDetailsComponent
+    FullDetailsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

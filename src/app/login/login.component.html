@@ -1,0 +1,28 @@
+<mat-card>
+<p>login works!</p>
+<form (submit)="Login(postForm)" #postForm="ngForm">
+  <mat-form-field>
+    <input matInput type="text"
+    placeholder="User Name"
+    required ngModel
+    name="sName"
+    #Name="ngModel">
+    <mat-error *ngIf="postForm.submitted && Name.invalid">
+    <div *ngIf="Name.errors.required">Name is required</div>
+    </mat-error>
+ </mat-form-field>
+ <br>
+  <mat-form-field>
+    <input type="password" matInput
+    placeholder="Password"
+    required ngModel
+    name="uPassword"
+    #Password="ngModel">
+    <mat-error *ngIf="postForm.submitted && Password.invalid">
+      <div *ngIf="Password.errors.required">Password is required</div>
+    </mat-error>
+</mat-form-field>
+<br>
+<button mat-stroked-button color="primary">Login</button>
+</form>
+</mat-card>
