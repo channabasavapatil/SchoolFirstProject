@@ -14,6 +14,8 @@ import { FullDetailsComponent } from './full-details/full-details.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { MatInputModule, MatCardModule, MatButtonModule, MatSelectModule, MatSnackBarModule } from '@angular/material';
 import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { AuthServiceService } from './auth-service.service';
 // import {MatSnackBar} from '@angular/material/snack-bar';
 
 @NgModule({
@@ -24,7 +26,8 @@ import { LoginComponent } from './login/login.component';
     AdminComponent,
     NewentryComponent,
     FullDetailsComponent,
-    LoginComponent
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,7 @@ import { LoginComponent } from './login/login.component';
     MatSelectModule,
     MatSnackBarModule
   ],
-  providers: [DataService],
+  providers: [DataService, AuthServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

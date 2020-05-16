@@ -17,7 +17,6 @@ app.use((req,res,next)=>{
     next();
 })
 app.use('/api',api);
-console.log(api)
 const port = process.env.PORT || '3000';
 app.set('port',port);
 const server = http.createServer(app);

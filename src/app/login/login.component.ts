@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
 
+import { DataService } from '../data.service';
+import {userInfo} from '../signup/UserInfo';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,7 +11,7 @@ import {NgForm} from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataServc: DataService) { }
 
   ngOnInit() {
   }
@@ -16,8 +19,21 @@ export class LoginComponent implements OnInit {
     if (form.invalid) {
       return;
       }
-    alert( form.value.sName);
-    alert( form.value.uPassword);
+    const UserDetails: userInfo = { UserName: form.value.sName, Password: form.value.uPassword };
+
+    if (form.invalid){
+      return;
+    }
+    this.dataServc.LoginUser(UserDetails);
+    // .subscribe(res =>{
+    //   console.log(res.message);
+    // },
+    // err => {
+    //     console.log(err);
+    // },
+    // () => {
+    //   console.log('All Done');
+    // });
 
   }
 }
