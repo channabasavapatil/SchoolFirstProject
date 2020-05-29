@@ -43,7 +43,7 @@ export class DataService {
       console.log(err);
     }, () => {
       console.log('Done');
-    })
+    });
     // console.log(this.http.post('http://localhost:3000/api/NewUser', Details).pipe());
    }
 }
